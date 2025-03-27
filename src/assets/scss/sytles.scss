@@ -1,0 +1,20 @@
+@import 'bootstrap/scss/bootstrap';
+
+:root {
+  --pa-body-color: #074e5e;
+  --pa-primary-color: #0fadd0;
+  --pa-primary-bg-subtle: #caebf2;
+}
+
+body {
+  background-color: var(--bs-secondary-bg);
+}
+
+.bg-default {
+  background-color: var(--pa-body-color);
+}
+
+@font-face {
+  font-family: 'Luckiest Guy';
+  src: url(/public/fonts/LuckiestGuy-Regular.ttf);
+}
