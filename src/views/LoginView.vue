@@ -1,64 +1,40 @@
 <template>
   <div class="main-container">
-    <div class="header-container bg-gradient-primary">
-      <div class="separator">
-        <svg
-          x="0"
-          y="0"
-          viewBox="0 0 2560 100"
-          preserveAspectRatio="none"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <polygon points="2560 0 2560 100 0 100" class="fill-default"></polygon>
-        </svg>
-      </div>
-    </div>
     <div class="login-box container">
       <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8">
-          <div class="card border-0">
-            <p class="title">
-              <span>PasswdMan</span>
-            </p>
+        <div class="col-xl-4 col-lg-6 col-md-8">
+          <p class="title">
+            <span>PasswdMan</span>
+          </p>
+          <div class="card border">
             <form @submit.prevent="onSubmit">
-              <div class="row mb-3">
-                <div class="col-md-2 text-end d-none d-md-block">
-                  <label for="account" class="col-form-label">账号</label>
-                </div>
-                <div class="col-md-9">
-                  <input
-                    type="text"
-                    class="form-control"
-                    :class="{ 'is-invalid': errors.password }"
-                    id="account"
-                    placeholder="请输入账号"
-                    v-model="account"
-                    v-bind="accountAttrs"
-                  />
-                  <div class="invalid-feedback">{{ errors.account }}</div>
-                </div>
+              <div>
+                <label for="account" class="col-form-label">Account</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  :class="{ 'is-invalid': errors.password }"
+                  id="account"
+                  placeholder="请输入账号"
+                  v-model="account"
+                  v-bind="accountAttrs"
+                />
+                <div class="invalid-feedback">{{ errors.account }}</div>
               </div>
-              <div class="row mb-3">
-                <div class="col-md-2 text-end d-none d-md-block">
-                  <label for="password" class="col-form-label">密码</label>
-                </div>
-                <div class="col-md-9">
-                  <div :class="{ 'is-invalid': errors.password }">
-                    <input
-                      type="password"
-                      class="form-control"
-                      :class="{ 'is-invalid': errors.password }"
-                      id="password"
-                      placeholder="请输入密码"
-                      v-model="password"
-                      v-bind="passwordAttrs"
-                    />
-                  </div>
-                  <div class="invalid-feedback">{{ errors.password }}</div>
-                </div>
+              <div>
+                <label for="password" class="col-form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  :class="{ 'is-invalid': errors.password }"
+                  id="password"
+                  placeholder="请输入密码"
+                  v-model="password"
+                  v-bind="passwordAttrs"
+                />
+                <div class="invalid-feedback">{{ errors.password }}</div>
               </div>
-              <div class="row justify-content-center mb-3">
+              <div class="row justify-content-center">
                 <button type="submit" class="btn btn-primary col-6 col-md-4 col-sm-6">登录</button>
               </div>
             </form>
@@ -101,15 +77,13 @@ watch(errors, () => {
   console.log(errors)
 })
 
-onMounted(() => {
-  document.body.classList.add('bg-default')
-})
 </script>
 
 <style lang="scss" scoped>
 .main-container {
   width: 100%;
   height: 100vh;
+  background: url(/images/login.webp) repeat center center fixed;
 }
 .header-container {
   width: 100%;
@@ -142,16 +116,37 @@ onMounted(() => {
   }
 }
 .login-box {
-  margin-top: -10rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   .card {
-    background-color: var(--bs-secondary-bg);
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    --bs-border-color: #164485;
+    --bs-card-bg: #072246;
+    form {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .col-form-label {
+      color: #fff;
+    }
+    .form-control {
+      --bs-body-bg: #092752;
+      --bs-body-color: #fff;
+      padding: 0.8rem;
+      &::placeholder {
+        color:#fff;
+      }
+    }
   }
   .title {
     font-family: 'Luckiest Guy';
     font-size: 2.5rem;
-    color: var(--pa-body-color);
+    color: #fff;
     position: relative;
+    text-align: center;
+    margin-bottom: 4rem;
     span {
       position: relative;
       z-index: 10;

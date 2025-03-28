@@ -10,11 +10,15 @@ body {
   background-color: var(--bs-secondary-bg);
 }
 
-.bg-default {
-  background-color: var(--pa-body-color);
-}
-
 @font-face {
   font-family: 'Luckiest Guy';
-  src: url(/public/fonts/LuckiestGuy-Regular.ttf);
+  src: url(/fonts/LuckiestGuy-Regular.ttf);
+}
+
+/* 表单 */
+.form-control {
+  margin-bottom: calc(0.25rem + 1.5rem);
+  &.is-invalid {
+    margin-bottom: 0;
+  }
 }
