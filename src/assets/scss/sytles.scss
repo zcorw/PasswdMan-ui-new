@@ -4,6 +4,8 @@
   --pa-body-color: #074e5e;
   --pa-primary-color: #0fadd0;
   --pa-primary-bg-subtle: #caebf2;
+  --pa-menu-width: 272px;
+  --pa-list-width: 400px;
 }
 
 body {
@@ -16,9 +18,25 @@ body {
 }
 
 /* 表单 */
-.form-control {
-  margin-bottom: calc(0.25rem + 1.5rem);
-  &.is-invalid {
-    margin-bottom: 0;
+form {
+  .form-control {
+    margin-bottom: calc(0.25rem + 1.5rem);
+    &.is-invalid {
+      margin-bottom: 0;
+    }
   }
+}
+.form-control {
+  &.enter-search {
+    background-image: url(/images/enter.png);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 24px 24px;
+  }
+}
+
+
+
+.flex-1 {
+  flex: 1;
 }
